@@ -1,0 +1,208 @@
+
+<script>
+  $(document).ready(function() {
+
+    $('#assign_order_table').DataTable({
+      'processing': true,
+      'serverSide': true,
+      'serverMethod': 'post',
+      'pageLength': 20,
+      'stateSave': true,
+      stateSaveParams: function(settings, data) {
+        data.searchCountry = $('#search').val();
+      },
+      stateLoadParams: function(settings, data) {
+        $('#search').val(data.searchCountry);
+      },
+      'dom': '<<B>rt<ip>>',
+      'buttons': [{
+          extend: 'collection',
+          className: 'btn btn-falcon-default btn-sm me-2',
+          text: 'Export',
+          buttons: [
+            'copy',
+            'excel',
+            'csv',
+            'pdf',
+            'print'
+          ]
+        },
+        // {
+        //   text: 'Refresh',
+        //   className: 'btn-falcon-default btn-sm refresh_btn_id',
+        //   attr: { id: 'refresh_btn_id' }
+        // action: function ( e, dt, node, config ) {
+        //     alert( 'Button activated' );
+        // }
+        // }
+
+
+      ],
+      'paging': true,
+      'lengthMenu': [
+        [10, 25, 50, 100, -1],
+        [10, 25, 50, 100, 'All']
+      ],
+      'ajax': {
+        'url': 'datatable_.php'
+      },
+      'order': [
+        [6, 'desc']
+      ],
+      'columnDefs': [{
+          orderable: false,
+          targets: [0]
+        },
+        {
+          "targets": [3, 4, 6],
+          "className": "text-nowrap"
+        },
+        {
+          "targets": 5,
+          "className": "text-end"
+        }
+      ],
+      'columns': [{
+          data: 'selector'
+        },
+        {
+          data: 'Picker'
+        },
+        {
+          data: 'PONumber'
+        },
+        {
+          data: 'VendorName'
+        },
+        {
+          data: 'Reference'
+        },
+        {
+          data: 'OrderValue'
+        },
+        {
+          data: 'OrderCreatedOn'
+        },
+        {
+          data: 'CreatedBy'
+        }
+      ],
+      'responsive': 'true',
+      'responsive': {
+        details: {
+          type: 'none'
+        }
+      },
+      'language': {
+        'info': '_START_ to _END_ of _TOTAL_ orders',
+        'infoEmpty': 'Showing 0 to 0 of 0 scans',
+        'infoFiltered': '(filtered from _MAX_ total orders)',
+        'sLengthMenu': '_MENU_'
+        // "infoFiltered":""
+      },
+      "footerCallback": function(row, data, start, end, display) {
+        var api = this.api(),
+          data;
+        // Remove the formatting to get integer data for summation
+        var intVal = function(i) {
+          return typeof i === 'string' ? i.replace(/[\$,]/g, '') * 1 : typeof i === 'number' ? i : 0;
+        };
+
+        // total_salary over all pages
+        // total_salary = api.column( 5 ).data().reduce( function (a, b) {
+        //   return intVal(a) + intVal(b);
+        // },0 );
+
+        // total_order_value over this page
+        total_order_value = api.column(5, {
+          page: 'current'
+        }).data().reduce(function(a, b) {
+          return intVal(a) + intVal(b);
+        }, 0);
+
+        total_order_value = parseFloat(total_order_value);
+        // total_salary = parseFloat(total_salary);
+        // Update footer
+        $('#totalOrderVal').html(total_order_value.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+
+      }
+    });
+
+    purchaseOrderTable = $("#assign_order_table").DataTable();
+    // new $.fn.dataTable.Buttons(purchaseOrderTable, {
+    //   'buttons': [{
+    //     'extend': 'collection',
+    //     'text': 'Export',
+    //     'buttons': [
+    //       'copy',
+    //       'excel',
+    //       'csv',
+    //       'pdf',
+    //       'print'
+    //     ]
+    //   }]
+    // })
+
+    purchaseOrderTable.buttons().container().appendTo('#mohanw');
+
+    $(".buttons-collection").removeClass("btn-secondary");
+  });
+
+  $('#_assign_ord_po').on('click', function(ef) {
+    ef.preventDefault();
+    var fd = $('#_as_po').serialize();
+    $.ajax({
+      type: "POST",
+      data: $('#_as_po').serialize(),
+      url: "itry.php",
+      success: function(msgx) {
+        $resp = msgx.substring(0, 12);
+        if ($resp == 'success-dsds') {
+          $('#_em').html(msgx);
+          $('#_ureceiver').prop('selectedIndex', 0);
+          $('#assign_order_table').DataTable().ajax.reload();
+        } else if (msgx.substring(0, 3) == 'Sel') {
+          $('#_em').html(msgx);
+        } else if (msgx.substring(0, 3) == 'Ord') {
+          $('#_em').html(msgx);
+        } else {
+          $('#_em').html(msgx);
+          $('#_ureceiver').prop('selectedIndex', 0);
+          $('#assign_order_table').DataTable().ajax.reload();
+        }
+      }
+    })
+  });
+
+
+
+  //  var table = $('#assign_order_table').DataTable();
+
+  // #myInput is a <input type="text"> element
+  $('#search').on('keyup', function() {
+    purchaseOrderTable.search(this.value).draw();
+    purchaseOrderTable.state.save();
+  });
+
+  $('#filterPORecs').on('change', function(ef) {
+    ef.preventDefault();
+    var optVal = $('#filterPORecs').val();
+    purchaseOrderTable.page.len(optVal).draw();
+    // alert(optVal);
+  })
+
+  $('#refresh_btn_id2').on('click', function() {
+    $.ajax({
+      type: "POST",
+      url: "../../INB_OUT/API/GRWILLS/_fetch_po.php",
+      success: function(msgx) {
+        $('#assign_order_table').DataTable().ajax.reload();
+      }
+    });
+
+    $('#refresh_btn_id').on('click', function(rex) {
+      rex.preventDefault();
+      $('#assign_order_table').DataTable().ajax.reload();
+    });
+  });
+</script>

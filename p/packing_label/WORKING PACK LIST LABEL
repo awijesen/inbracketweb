@@ -1,0 +1,170 @@
+<?php
+require(__DIR__ . '/../../dbconnect/db.php');
+
+require('mysql_table.php');
+require('CevicheOne-Regular.php');
+// require(__DIR__ . '../../../dbconnect/db.php');
+
+
+class PDF extends PDF_MySQL_Table
+{
+
+  function Header()
+  {
+    require(__DIR__ . '/../../dbconnect/db.php');
+
+    $TRFSearch =  htmlspecialchars($_GET['linked'] ?? '');
+
+    // $TRFSearch = 'SO573949';
+    // $Response4 = 'somreer';
+    // $CUST_ = 'gnag';
+
+
+    $sql = "SELECT * FROM INB_PACK_LIST_DETAIL WHERE packListId=? GROUP BY packListId";
+
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $TRFSearch);
+    // $search = $findOrder;
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if (mysqli_num_rows($result) > 0) {
+      while ($row = $result->fetch_assoc()) {
+        $packListId =$row['packListId'];
+        $CustomerName = $row['CustomerName'];
+        $SalesOrderNumber = $row['SalesOrderNumber'];
+        $Courier = $row['Courier'];
+        $ConsignmentNote = $row['ConsignmentNote'];
+        $PalletCount = $row['PalletCount'];
+        $BoxCount = $row['BoxCount'];
+
+        
+      }
+    } else {
+      echo "";
+    } 
+
+    // Title
+    $this->Cell(2, 0, "", 0, 1, 'R', $this->Image('https://www.grwills.com.au/wp-content/uploads/2022/12/GR_Wills_Logo_RGB-1400x452.jpg', 7, 0.1, 2.2, 0.8));
+    // $this->Line(280, 32, 16, 32);
+    //$this->Image('../../assets/img/logo.gif',10,10,-300);
+    $this->SetY(0.1);
+    $this->SetX(1);
+    $this->SetFont('Arial', 'B', 10);
+    $this->Cell(1, 1, 'FROM:', 0, 1);
+
+    $this->SetY(1);
+    $this->SetX(1);
+    $this->SetFont('Arial', '', 10);
+    $this->Cell(5, 0.3, 'G&R Wills Wholesalers', 0,1);
+    // $this->Ln(1);
+    $this->SetY(1.4);
+    $this->SetX(1);
+    $this->MultiCell(5, 0.3, '34, Osgood Drive, Eaton, Northern Territory, Australia, 0810', 0, 1);
+    
+    $this->SetY(2.6);
+    $this->SetX(1);
+    $this->SetFont('Arial', 'B', 10);
+    $this->MultiCell(5, 0.3, 'SHIP TO:', 0, 1);
+
+    $this->SetY(3.2);
+    $this->SetX(1);
+    $this->SetFont('Arial', '', 10);
+    $this->MultiCell(6, 0.3, $CustomerName, 0, 1);
+
+    $this->SetY(3.6);
+    $this->SetX(1);
+    $this->SetFont('Arial', '', 10);
+    $this->MultiCell(6, 0.3, '34, Osgood Drive, Eaton, Northern Territory, Australia, 0810', 0, 1);
+
+    $this->SetY(4.5);
+    $this->SetX(1);
+    $this->SetFont('Arial', 'B', 10);
+    $this->Cell(6, 0.3, 'PACK LIST:', 0, 1);
+
+    $this->SetY(5);
+    $this->SetX(1);
+    $this->SetFont('Arial', 'B', 23);
+    $this->setFillColor(0,0,0,0); 
+    $this->SetTextColor(255,255,255,255);
+    $this->Cell(8, 1.5, $packListId,0,1, 'C', 1);
+
+    $this->setFillColor(255,255,255,255); 
+    $this->SetTextColor(0,0,0,0);
+    $this->SetY(7.2);
+    $this->SetX(1);
+    $this->AddFont('CCode39','','ConnectCode39.php');
+    $this->SetFont('CCode39','',22);
+    $this->Cell(8, 2.3, '*'.$SalesOrderNumber.'*', 0, 1, 'C', 1);
+
+    $this->SetY(8.5);
+    $this->SetX(1);
+    $this->SetFont('Arial', 'B', 10);
+    $this->Cell(3, 3, 'SHIPPING DETAIL:', 0, 1);
+
+    $this->SetY(9);
+    $this->SetX(1);
+    $this->SetFont('Arial', 'B', 10);
+    $this->Cell(3, 3, 'Transport Co:', 0, 1);
+
+    $this->SetY(9.4);
+    $this->SetX(1);
+    $this->SetFont('Arial', '', 10);
+    $this->Cell(3, 3, $Courier, 0, 1);
+
+    $this->SetY(9);
+    $this->SetX(4);
+    $this->SetFont('Arial', 'B', 10);
+    $this->Cell(6, 3, 'Consignment Note:', 0, 1);
+
+    $this->SetY(9.4);
+    $this->SetX(4);
+    $this->SetFont('Arial', '', 10);
+    $this->Cell(3, 3, $ConsignmentNote, 0, 1);
+
+    $this->SetY(10.5);
+    $this->SetX(1);
+    $this->SetFont('Arial', 'B', 10);
+    $this->Cell(3, 3, 'ORDER DETAIL:', 0, 1);
+
+    $this->SetY(11);
+    $this->SetX(1);
+    $this->SetFont('Arial', 'B', 10);
+    $this->Cell(6, 3, 'Pallet Count:', 0, 1);
+
+    $this->SetY(11.4);
+    $this->SetX(1);
+    $this->SetFont('Arial', '', 10);
+    $this->Cell(3, 3, $PalletCount, 0, 1);
+
+    $this->SetY(11);
+    $this->SetX(4);
+    $this->SetFont('Arial', 'B', 10);
+    $this->Cell(6, 3, 'Box Count:', 0, 1);
+
+    $this->SetY(11.4);
+    $this->SetX(4);
+    $this->SetFont('Arial', '', 10);
+    $this->Cell(3, 3, $BoxCount, 0, 1);
+
+    $this->SetY(12);
+    $this->SetX(1);
+    $this->SetFont('Arial', 'B', 10);
+    $this->Cell(3, 3, 'Order Ref:', 0, 1);
+
+    $this->SetY(12.4);
+    $this->SetX(1);
+    $this->SetFont('Arial', '', 10);
+    $this->Cell(3, 3, $SalesOrderNumber, 0, 1);
+    parent::Header();
+  }
+}
+
+$pickDetails = htmlspecialchars($_GET['linked'] ?? '');
+
+
+$pdf = new PDF('P','cm',array(10,15.25));
+$pdf->AliasNbPages();
+// $pdf->AddPage();
+
+$pdf->Output();

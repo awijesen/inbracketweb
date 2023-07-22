@@ -1,0 +1,10 @@
+[02-Dec-2022 15:24:30 CST6CDT] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'uiqsamkbka5v1'@'localhost' (using password: YES) in /home/customer/www/inbracket.com/public_html/dbconnect/db.php:14
+Stack trace:
+#0 /home/customer/www/inbracket.com/public_html/dbconnect/db.php(14): mysqli_connect('localhost', 'uiqsamkbka5v1', Object(SensitiveParameterValue), 'dbeeoiykwgg853')
+#1 {main}
+  thrown in /home/customer/www/inbracket.com/public_html/dbconnect/db.php on line 14
+[02-Dec-2022 15:26:27 CST6CDT] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'uiqsamkbka5v1'@'localhost' (using password: YES) in /home/customer/www/inbracket.com/public_html/dbconnect/db.php:14
+Stack trace:
+#0 /home/customer/www/inbracket.com/public_html/dbconnect/db.php(14): mysqli_connect('localhost', 'uiqsamkbka5v1', Object(SensitiveParameterValue), 'dbeeoiykwgg853')
+#1 {main}
+  thrown in /home/customer/www/inbracket.com/public_html/dbconnect/db.php on line 14

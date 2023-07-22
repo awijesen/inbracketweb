@@ -1,0 +1,57 @@
+[09-Apr-2023 07:20:00 CST6CDT] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/customer/www/workspace.inbracket.com/public_html/menu/sub_nav.php on line 463
+[09-Apr-2023 07:20:00 CST6CDT] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/customer/www/workspace.inbracket.com/public_html/menu/sub_nav.php on line 463
+[09-Apr-2023 07:51:06 CST6CDT] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/customer/www/workspace.inbracket.com/public_html/menu/sub_nav.php on line 463
+[09-Apr-2023 07:51:06 CST6CDT] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/customer/www/workspace.inbracket.com/public_html/menu/sub_nav.php on line 463
+[09-Apr-2023 07:51:07 CST6CDT] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/customer/www/workspace.inbracket.com/public_html/menu/sub_nav.php on line 463
+[09-Apr-2023 07:51:07 CST6CDT] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/customer/www/workspace.inbracket.com/public_html/menu/sub_nav.php on line 463
+[09-Apr-2023 19:03:23 CST6CDT] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/customer/www/workspace.inbracket.com/public_html/menu/sub_nav.php on line 463
+[09-Apr-2023 19:03:23 CST6CDT] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/customer/www/workspace.inbracket.com/public_html/menu/sub_nav.php on line 463
+[09-Apr-2023 19:56:00 CST6CDT] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/customer/www/workspace.inbracket.com/public_html/menu/sub_nav.php on line 463
+[09-Apr-2023 19:56:00 CST6CDT] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/customer/www/workspace.inbracket.com/public_html/menu/sub_nav.php on line 463
+[10-Apr-2023 12:24:36 Australia/Darwin] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ConsignmentNote=?, FootNote=? WHERE packListId=?' at line 1 in /home/customer/www/workspace.inbracket.com/public_html/p/pack_list_label/UpdatePackListData.php:33
+Stack trace:
+#0 /home/customer/www/workspace.inbracket.com/public_html/p/pack_list_label/UpdatePackListData.php(33): mysqli->prepare('UPDATE INB_PACK...')
+#1 {main}
+  thrown in /home/customer/www/workspace.inbracket.com/public_html/p/pack_list_label/UpdatePackListData.php on line 33
+[10-Apr-2023 12:29:04 Australia/Darwin] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ConsignmentNote=?, FootNote=? WHERE packListId=?' at line 1 in /home/customer/www/workspace.inbracket.com/public_html/p/pack_list_label/UpdatePackListData.php:33
+Stack trace:
+#0 /home/customer/www/workspace.inbracket.com/public_html/p/pack_list_label/UpdatePackListData.php(33): mysqli->prepare('UPDATE INB_PACK...')
+#1 {main}
+  thrown in /home/customer/www/workspace.inbracket.com/public_html/p/pack_list_label/UpdatePackListData.php on line 33
+[11-Apr-2023 08:20:08 CST6CDT] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/customer/www/workspace.inbracket.com/public_html/menu/sub_nav.php on line 464
+[11-Apr-2023 08:20:08 CST6CDT] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/customer/www/workspace.inbracket.com/public_html/menu/sub_nav.php on line 464
+[24-May-2023 10:22:57 CST6CDT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PLKStatus' in 'where clause' in /home/customer/www/workspace.inbracket.com/public_html/p/pack_list_label/datatable.php:37
+Stack trace:
+#0 /home/customer/www/workspace.inbracket.com/public_html/p/pack_list_label/datatable.php(37): PDOStatement->execute()
+#1 {main}
+  thrown in /home/customer/www/workspace.inbracket.com/public_html/p/pack_list_label/datatable.php on line 37
+[24-May-2023 10:23:07 CST6CDT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PLKStatus' in 'where clause' in /home/customer/www/workspace.inbracket.com/public_html/p/pack_list_label/datatable.php:37
+Stack trace:
+#0 /home/customer/www/workspace.inbracket.com/public_html/p/pack_list_label/datatable.php(37): PDOStatement->execute()
+#1 {main}
+  thrown in /home/customer/www/workspace.inbracket.com/public_html/p/pack_list_label/datatable.php on line 37
+[24-May-2023 10:26:27 CST6CDT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PKLStatus' in 'where clause' in /home/customer/www/workspace.inbracket.com/public_html/p/pack_list_label/datatable.php:37
+Stack trace:
+#0 /home/customer/www/workspace.inbracket.com/public_html/p/pack_list_label/datatable.php(37): PDOStatement->execute()
+#1 {main}
+  thrown in /home/customer/www/workspace.inbracket.com/public_html/p/pack_list_label/datatable.php on line 37
+[24-May-2023 10:26:49 CST6CDT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'PKLStatus' in 'where clause' in /home/customer/www/workspace.inbracket.com/public_html/p/pack_list_label/datatable.php:37
+Stack trace:
+#0 /home/customer/www/workspace.inbracket.com/public_html/p/pack_list_label/datatable.php(37): PDOStatement->execute()
+#1 {main}
+  thrown in /home/customer/www/workspace.inbracket.com/public_html/p/pack_list_label/datatable.php on line 37
+[24-May-2023 10:30:28 CST6CDT] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'PKLStatus' in 'where clause' in /home/customer/www/workspace.inbracket.com/public_html/p/pack_list_label/index.php:60
+Stack trace:
+#0 /home/customer/www/workspace.inbracket.com/public_html/p/pack_list_label/index.php(60): mysqli->prepare('SELECT packList...')
+#1 {main}
+  thrown in /home/customer/www/workspace.inbracket.com/public_html/p/pack_list_label/index.php on line 60
+[24-May-2023 10:30:40 CST6CDT] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'PKLStatus' in 'where clause' in /home/customer/www/workspace.inbracket.com/public_html/p/pack_list_label/index.php:60
+Stack trace:
+#0 /home/customer/www/workspace.inbracket.com/public_html/p/pack_list_label/index.php(60): mysqli->prepare('SELECT packList...')
+#1 {main}
+  thrown in /home/customer/www/workspace.inbracket.com/public_html/p/pack_list_label/index.php on line 60
+[24-May-2023 10:31:13 CST6CDT] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'PKLStatus' in 'where clause' in /home/customer/www/workspace.inbracket.com/public_html/p/pack_list_label/index.php:60
+Stack trace:
+#0 /home/customer/www/workspace.inbracket.com/public_html/p/pack_list_label/index.php(60): mysqli->prepare('SELECT packList...')
+#1 {main}
+  thrown in /home/customer/www/workspace.inbracket.com/public_html/p/pack_list_label/index.php on line 60

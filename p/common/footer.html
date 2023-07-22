@@ -1,0 +1,43 @@
+<script src="../../vendors/popper/popper.min.js"></script>
+<script src="../../vendors/bootstrap/bootstrap.min.js"></script>
+<script src="../../vendors/anchorjs/anchor.min.js"></script>
+<script src="../../vendors/is/is.min.js"></script>
+<script src="../../vendors/fontawesome/all.min.js"></script>
+<script src="../../vendors/lodash/lodash.min.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+<script src="../../vendors/list.js/list.min.js"></script>
+<script src="../../assets/js/theme.js"></script>
+<script>
+ //footer.html line 14
+ 
+ var autoLogoutTimer;
+resetTimer();
+$(document).on('mouseover mousedown touchstart click keydown mousewheel DDMouseScroll wheel scroll',document,function(e){
+    //  console.log(e.type); // 
+    resetTimer();
+});
+// resetTimer is used to reset logout (redirect to logout) time 
+function resetTimer(){ 
+    clearTimeout(autoLogoutTimer)
+    autoLogoutTimer = setTimeout(idleLogout,2400000) // 1000 = 1 second
+} 
+// idleLogout is used to Actual navigate to logout
+function idleLogout(){
+    window.location.href = '../../logout/index.php'; // Here goes to your logout url 
+}
+
+function check_session_id() {
+    // var session_id = "<?php echo $_SESSION['SessionID']; ?>";
+    fetch('/p/common/_validator.php').then(function(response){
+        return response.json();
+    }).then(function(responseData){
+        if(responseData.output == 'logout'){
+            window.location.href='../../logout/logout.php';
+        }
+    })
+}
+
+setInterval(function(){
+    check_session_id();
+}, 10000);
+</script>

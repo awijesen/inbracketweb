@@ -1,0 +1,10 @@
+[10-Feb-2023 02:50:21 CST6CDT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pf.ProductCode' in 'field list' in /home/customer/www/workspace.inbracket.com/public_html/p/invoice_history/datatable.php:32
+Stack trace:
+#0 /home/customer/www/workspace.inbracket.com/public_html/p/invoice_history/datatable.php(32): PDOStatement->execute()
+#1 {main}
+  thrown in /home/customer/www/workspace.inbracket.com/public_html/p/invoice_history/datatable.php on line 32
+[10-Feb-2023 02:51:40 CST6CDT] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pf.ProductCode' in 'field list' in /home/customer/www/workspace.inbracket.com/public_html/p/invoice_history/datatable.php:32
+Stack trace:
+#0 /home/customer/www/workspace.inbracket.com/public_html/p/invoice_history/datatable.php(32): PDOStatement->execute()
+#1 {main}
+  thrown in /home/customer/www/workspace.inbracket.com/public_html/p/invoice_history/datatable.php on line 32

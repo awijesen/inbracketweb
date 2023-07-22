@@ -1,0 +1,23 @@
+[27-Feb-2023 21:36:59 CST6CDT] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/customer/www/workspace.inbracket.com/public_html/menu/sub_nav.php on line 330
+[27-Feb-2023 21:36:59 CST6CDT] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/customer/www/workspace.inbracket.com/public_html/menu/sub_nav.php on line 330
+[27-Feb-2023 22:00:35 CST6CDT] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'count' in 'where clause' in /home/customer/www/workspace.inbracket.com/public_html/p/stocktake_progress/data.php:48
+Stack trace:
+#0 /home/customer/www/workspace.inbracket.com/public_html/p/stocktake_progress/data.php(48): mysqli_query(Object(mysqli), 'SELECT COUNT(di...')
+#1 {main}
+  thrown in /home/customer/www/workspace.inbracket.com/public_html/p/stocktake_progress/data.php on line 48
+[27-Feb-2023 22:00:52 CST6CDT] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'count' in 'where clause' in /home/customer/www/workspace.inbracket.com/public_html/p/stocktake_progress/data.php:48
+Stack trace:
+#0 /home/customer/www/workspace.inbracket.com/public_html/p/stocktake_progress/data.php(48): mysqli_query(Object(mysqli), 'SELECT COUNT(di...')
+#1 {main}
+  thrown in /home/customer/www/workspace.inbracket.com/public_html/p/stocktake_progress/data.php on line 48
+[27-Feb-2023 22:01:09 CST6CDT] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'count' in 'where clause' in /home/customer/www/workspace.inbracket.com/public_html/p/stocktake_progress/data.php:48
+Stack trace:
+#0 /home/customer/www/workspace.inbracket.com/public_html/p/stocktake_progress/data.php(48): mysqli_query(Object(mysqli), 'SELECT COUNT(di...')
+#1 {main}
+  thrown in /home/customer/www/workspace.inbracket.com/public_html/p/stocktake_progress/data.php on line 48
+[27-Feb-2023 22:37:24 CST6CDT] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/customer/www/workspace.inbracket.com/public_html/menu/sub_nav.php on line 330
+[27-Feb-2023 22:37:24 CST6CDT] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/customer/www/workspace.inbracket.com/public_html/menu/sub_nav.php on line 330
+[27-Feb-2023 23:06:29 CST6CDT] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/customer/www/workspace.inbracket.com/public_html/menu/sub_nav.php on line 330
+[27-Feb-2023 23:06:29 CST6CDT] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/customer/www/workspace.inbracket.com/public_html/menu/sub_nav.php on line 330
+[28-Feb-2023 00:41:38 CST6CDT] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/customer/www/workspace.inbracket.com/public_html/menu/sub_nav.php on line 330
+[28-Feb-2023 00:41:38 CST6CDT] PHP Deprecated:  substr(): Passing null to parameter #1 ($string) of type string is deprecated in /home/customer/www/workspace.inbracket.com/public_html/menu/sub_nav.php on line 330
