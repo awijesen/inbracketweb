@@ -449,7 +449,7 @@ session_start();
 
   </li> -->
   <li>
-      <div><?= $_SESSION["fname"] . " " ?></div>
+      <div><?= $_SESSION["fname"] . " " . $_SESSION['LNAME']. " "?></div>
     </li>
   <li class="nav-item dropdown"><a class="nav-link pe-0" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="avatar avatar-xl" style="border-radius: 25px;
@@ -462,7 +462,7 @@ justify-content: center; /* Align horizontal */
 align-items: center;">
           <p style="font-size: 10px; margin-top:14px;">
             <?php echo strtoupper(substr($_SESSION['fname'], 0, 1)) . "" . strtoupper(substr($_SESSION['LNAME'], 0, 1)) ?>
-          </p>
+          </p> 
           <!-- <img class="rounded-circle" src="../../assets/img/team/3-thumb.png" alt="" /> -->
           <!-- <i class="bi bi-gear"></i> -->
           <!-- <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
